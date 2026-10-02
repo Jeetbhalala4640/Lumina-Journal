@@ -11,6 +11,7 @@ export default defineConfig({
     },
   },
   server: {
+    host: true, // Listen on all local IP addresses for easy multi-device access
     port: 3000,
     open: false,
   },
