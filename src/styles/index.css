@@ -1,0 +1,240 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --brand-primary: #d95d38;
+  }
+
+  body {
+    font-feature-settings: "cv02", "cv03", "cv04", "cv11";
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+  background: rgba(156, 163, 175, 0.4);
+  border-radius: 9999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(156, 163, 175, 0.7);
+}
+
+/* Editorial Article Content Styling */
+.editorial-prose {
+  color: #27272a;
+  line-height: 1.85;
+  font-size: 1.125rem;
+}
+
+.dark .editorial-prose {
+  color: #e4e4e7;
+}
+
+.editorial-prose p {
+  margin-top: 1.5em;
+  margin-bottom: 1.5em;
+}
+
+.editorial-prose h1,
+.editorial-prose h2,
+.editorial-prose h3,
+.editorial-prose h4 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-weight: 700;
+  color: #09090b;
+  letter-spacing: -0.02em;
+  margin-top: 2.2em;
+  margin-bottom: 0.8em;
+  line-height: 1.25;
+}
+
+.dark .editorial-prose h1,
+.dark .editorial-prose h2,
+.dark .editorial-prose h3,
+.dark .editorial-prose h4 {
+  color: #fafafa;
+}
+
+.editorial-prose h1 { font-size: 2.25rem; }
+.editorial-prose h2 { font-size: 1.75rem; border-bottom: 1px solid rgba(228, 228, 231, 0.6); padding-bottom: 0.4rem; }
+.dark .editorial-prose h2 { border-bottom-color: rgba(63, 63, 70, 0.6); }
+.editorial-prose h3 { font-size: 1.35rem; }
+
+.editorial-prose a {
+  color: #d95d38;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+  font-weight: 500;
+  transition: color 0.15s ease;
+}
+
+.editorial-prose a:hover {
+  color: #ca4421;
+}
+
+.editorial-prose blockquote {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-style: italic;
+  font-size: 1.25rem;
+  border-left: 3px solid #d95d38;
+  padding-left: 1.5rem;
+  margin: 2rem 0;
+  color: #52525b;
+}
+
+.dark .editorial-prose blockquote {
+  color: #a1a1aa;
+}
+
+.editorial-prose pre {
+  background-color: #18181b;
+  color: #f4f4f5;
+  padding: 1.25rem 1.5rem;
+  border-radius: 0.75rem;
+  overflow-x: auto;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.925rem;
+  line-height: 1.6;
+  margin: 1.75rem 0;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.editorial-prose code:not(pre code) {
+  background-color: rgba(228, 228, 231, 0.7);
+  color: #ca4421;
+  padding: 0.2em 0.45em;
+  border-radius: 0.35rem;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.88em;
+}
+
+.dark .editorial-prose code:not(pre code) {
+  background-color: rgba(39, 39, 42, 0.9);
+  color: #f0b29c;
+}
+
+.editorial-prose ul {
+  list-style-type: disc;
+  padding-left: 1.75rem;
+  margin: 1.25rem 0;
+}
+
+.editorial-prose ol {
+  list-style-type: decimal;
+  padding-left: 1.75rem;
+  margin: 1.25rem 0;
+}
+
+.editorial-prose li {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.editorial-prose img {
+  border-radius: 0.75rem;
+  margin: 2rem auto;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.08);
+  max-width: 100%;
+  height: auto;
+}
+
+.editorial-prose table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 2rem 0;
+  font-size: 0.95rem;
+}
+
+.editorial-prose th,
+.editorial-prose td {
+  border: 1px solid #e4e4e7;
+  padding: 0.75rem 1rem;
+  text-align: left;
+}
+
+.dark .editorial-prose th,
+.dark .editorial-prose td {
+  border-color: #3f3f46;
+}
+
+.editorial-prose th {
+  background-color: #f4f4f5;
+  font-weight: 600;
+}
+
+.dark .editorial-prose th {
+  background-color: #27272a;
+}
+
+.editorial-prose hr {
+  border: 0;
+  height: 1px;
+  background: #e4e4e7;
+  margin: 3rem 0;
+}
+
+.dark .editorial-prose hr {
+  background: #3f3f46;
+}
+
+/* TipTap Editor Specific Styling */
+.ProseMirror {
+  outline: none;
+  min-height: 420px;
+}
+
+.ProseMirror p.is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  color: #a1a1aa;
+  pointer-events: none;
+  height: 0;
+}
+
+.ProseMirror table {
+  border-collapse: collapse;
+  margin: 0;
+  overflow: hidden;
+  table-layout: fixed;
+  width: 100%;
+}
+
+.ProseMirror table td,
+.ProseMirror table th {
+  border: 1px solid #d4d4d8;
+  box-sizing: border-box;
+  min-width: 1em;
+  padding: 6px 8px;
+  position: relative;
+  vertical-align: top;
+}
+
+.dark .ProseMirror table td,
+.dark .ProseMirror table th {
+  border-color: #52525b;
+}
+
+.ProseMirror table th {
+  background-color: #f4f4f5;
+  font-weight: bold;
+  text-align: left;
+}
+
+.dark .ProseMirror table th {
+  background-color: #27272a;
+}
